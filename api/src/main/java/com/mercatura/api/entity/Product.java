@@ -23,20 +23,23 @@ import lombok.NoArgsConstructor;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @NotNull(message = "designation is required.")
-    String designation;
+    private String designation;
 
     @NotNull(message = "price is required.")
-    Double price;
+    private Double price;
 
     @NotNull(message = "quantity is required.")
-    Integer quantity;
-
+    private Integer quantity;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(insertable = false, nullable = false, name = "category_id")
-    Category category;
+    private Category category;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
 }

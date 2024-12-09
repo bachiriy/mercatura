@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.mercatura.api.entity.Category;
 
 @Repository
-public interface CategoryRepository extends JpaRepository<Category, Long> { 
+public interface CategoryRepository extends JpaRepository<Category, Long> {
+    boolean existsByNameAndDescription(String name, String description);
 }

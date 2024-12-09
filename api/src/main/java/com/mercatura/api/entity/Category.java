@@ -22,15 +22,15 @@ import lombok.NoArgsConstructor;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @NotNull(message = "name is required.")
-    String name;
+    private String name;
 
     @NotNull(message = "description is required.")
-    String description;
+    private String description;
 
 
     @OneToMany(mappedBy = "category")
-    List<Product> products;
+    private List<Product> products;
 }

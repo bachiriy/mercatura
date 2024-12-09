@@ -7,4 +7,5 @@ import com.mercatura.api.entity.Product;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
+    boolean existsByDesignationAndPriceAndQuantity(String designation, Double price, Integer quantity);
 }
