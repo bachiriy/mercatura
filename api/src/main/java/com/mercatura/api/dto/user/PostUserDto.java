@@ -9,4 +9,5 @@ import lombok.*;
 public class PostUserDto {
     String username;
     String password;
+    String email;
 }
